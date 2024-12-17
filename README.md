@@ -7,20 +7,30 @@ A DataWeave wrapper for the [DataFaker](https://www.datafaker.net/) library, all
 This library provides a simple way to use DataFaker's extensive fake data generation capabilities within DataWeave scripts. It bridges the gap between Java's DataFaker library and DataWeave, making it easy to generate realistic test data for your Mule applications.
 
 ## Installation
+
+### Optional
+
+- Update the package in `DataFakerWrapper.java`:
+```java
+package your.organization.name;
+```
+
+- Update the import in `DataFaker.dwl`:
+```dataweave
+import java!your::organization::name::DataFakerWrapper
+```
+
 ### Local
 
-Add the following dependency to your `pom.xml`:
 
 ```shell
-mvn clean install
+mvn clean install -Dexchange.orgId=<CH BG ID>
 ```
 
 ### Cloudhub
 
-Add the following dependency to your `pom.xml`:
-
 ```shell
-mvn clean deploy -DorgId=<CH BG ID>
+mvn clean deploy -Dexchange.orgId=<CH BG ID>
 ```
 
 ## Usage
